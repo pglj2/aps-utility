@@ -18,7 +18,7 @@ body {
 
 .business-header {
     height: 400px;
-    background: url(../image/pratu.jpg) center center no-repeat scroll; //pegar uma imagem 1920x40
+    background: url(../image/reuniao.jpg) center center no-repeat scroll; //pegar uma imagem 1920x40
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
