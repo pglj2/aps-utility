@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Avell/Desktop/mpman/aps-utility/mpmanager/conf/routes
-// @DATE:Mon Sep 25 21:13:31 GFT 2017
+// @DATE:Wed Sep 27 23:12:21 GFT 2017
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -19,6 +19,16 @@ package controllers.javascript {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:11
+    def models: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.models",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "models"})
+        }
+      """
+    )
   
     // @LINE:6
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(

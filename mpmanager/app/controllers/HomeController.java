@@ -1,7 +1,9 @@
 package controllers;
 
 import play.mvc.*;
-
+import views.html.*;
+import play.data.*;
+import javax.inject.*;
 /**
  * This controller contains an action to handle HTTP requests
  * to the application's home page.
@@ -18,4 +20,8 @@ public class HomeController extends Controller {
         return ok(views.html.index.render());
     }
 
+    public Result models(){
+      return ok(models.render());
+
+    }
 }

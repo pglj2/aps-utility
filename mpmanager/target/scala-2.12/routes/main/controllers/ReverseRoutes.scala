@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Avell/Desktop/mpman/aps-utility/mpmanager/conf/routes
-// @DATE:Mon Sep 25 21:13:31 GFT 2017
+// @DATE:Wed Sep 27 23:12:21 GFT 2017
 
 import play.api.mvc.Call
 
@@ -18,6 +18,12 @@ package controllers {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:11
+    def models(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "models")
+    }
   
     // @LINE:6
     def index(): Call = {
