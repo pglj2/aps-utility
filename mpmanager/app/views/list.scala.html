@@ -1,0 +1,17 @@
+@(atividades: Set[Atividade])
+@main("Atividades Catalogue") {
+	<h1>All Atividades</h1>
+	<dl>
+	@for(atividade <- atividades) {
+		<dt>
+			<a href="@routes.AtividadeController.show(atividade.id)">
+				@atividade.id - @atividade.data - @atividade.status
+			</a>
+		</dt>
+		<dd>@atividade.descricao</dd>
+	}
+	</dl>
+
+	<a href="@routes.AtividadeController.showBlank()" class="btn">
+	<i class="icon-plus"></i> New atividade</a>
+}

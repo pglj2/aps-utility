@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/Avell/Desktop/mpman/aps-utility/mpmanager/conf/routes
-// @DATE:Wed Sep 27 23:12:21 GFT 2017
+// @SOURCE:C:/Users/hosqu/Documents/Projetos Ativos/APS/aps-utility/mpmanager/conf/routes
+// @DATE:Thu Sep 28 00:42:58 BRT 2017
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -20,22 +20,72 @@ package controllers.javascript {
     }
 
   
-    // @LINE:11
-    def models: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.models",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "models"})
-        }
-      """
-    )
-  
     // @LINE:6
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.index",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + """"})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:14
+  class ReverseAtividadeController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:16
+    def show: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.AtividadeController.show",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "atividades/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
+    // @LINE:14
+    def list: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.AtividadeController.list",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "atividades"})
+        }
+      """
+    )
+  
+    // @LINE:17
+    def save: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.AtividadeController.save",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "atividades"})
+        }
+      """
+    )
+  
+    // @LINE:15
+    def showBlank: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.AtividadeController.showBlank",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "atividades/new"})
+        }
+      """
+    )
+  
+    // @LINE:18
+    def saveEdit: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.AtividadeController.saveEdit",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "atividades/edit"})
         }
       """
     )

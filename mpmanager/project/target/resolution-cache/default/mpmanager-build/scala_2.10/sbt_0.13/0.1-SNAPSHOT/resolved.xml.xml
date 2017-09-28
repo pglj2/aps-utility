@@ -4,7 +4,7 @@
 		module="mpmanager-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20170927222903"
+		publication="20170927234413"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>
