@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/Avell/Desktop/mpman/aps-utility/mpmanager/conf/routes
-// @DATE:Mon Sep 25 21:13:31 GFT 2017
+// @SOURCE:C:/Users/hosqu/Documents/Projetos Ativos/APS/aps-utility/mpmanager/conf/routes
+// @DATE:Thu Sep 28 00:42:58 BRT 2017
 
 package router
 
@@ -19,6 +19,8 @@ class Routes(
   HomeController_0: controllers.HomeController,
   // @LINE:9
   Assets_1: controllers.Assets,
+  // @LINE:14
+  AtividadeController_2: controllers.AtividadeController,
   val prefix: String
 ) extends GeneratedRouter {
 
@@ -27,12 +29,14 @@ class Routes(
     // @LINE:6
     HomeController_0: controllers.HomeController,
     // @LINE:9
-    Assets_1: controllers.Assets
-  ) = this(errorHandler, HomeController_0, Assets_1, "/")
+    Assets_1: controllers.Assets,
+    // @LINE:14
+    AtividadeController_2: controllers.AtividadeController
+  ) = this(errorHandler, HomeController_0, Assets_1, AtividadeController_2, "/")
 
   def withPrefix(prefix: String): Routes = {
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, HomeController_0, Assets_1, prefix)
+    new Routes(errorHandler, HomeController_0, Assets_1, AtividadeController_2, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -42,6 +46,11 @@ class Routes(
   def documentation = List(
     ("""GET""", this.prefix, """controllers.HomeController.index"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """atividades""", """controllers.AtividadeController.list"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """atividades/new""", """controllers.AtividadeController.showBlank()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """atividades/""" + "$" + """id<[^/]+>""", """controllers.AtividadeController.show(id:String)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """atividades""", """controllers.AtividadeController.save()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """atividades/edit""", """controllers.AtividadeController.saveEdit()"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -85,6 +94,96 @@ class Routes(
     )
   )
 
+  // @LINE:14
+  private[this] lazy val controllers_AtividadeController_list2_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("atividades")))
+  )
+  private[this] lazy val controllers_AtividadeController_list2_invoker = createInvoker(
+    AtividadeController_2.list,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.AtividadeController",
+      "list",
+      Nil,
+      "GET",
+      this.prefix + """atividades""",
+      """ Atividade Routes""",
+      Seq()
+    )
+  )
+
+  // @LINE:15
+  private[this] lazy val controllers_AtividadeController_showBlank3_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("atividades/new")))
+  )
+  private[this] lazy val controllers_AtividadeController_showBlank3_invoker = createInvoker(
+    AtividadeController_2.showBlank(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.AtividadeController",
+      "showBlank",
+      Nil,
+      "GET",
+      this.prefix + """atividades/new""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:16
+  private[this] lazy val controllers_AtividadeController_show4_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("atividades/"), DynamicPart("id", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_AtividadeController_show4_invoker = createInvoker(
+    AtividadeController_2.show(fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.AtividadeController",
+      "show",
+      Seq(classOf[String]),
+      "GET",
+      this.prefix + """atividades/""" + "$" + """id<[^/]+>""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:17
+  private[this] lazy val controllers_AtividadeController_save5_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("atividades")))
+  )
+  private[this] lazy val controllers_AtividadeController_save5_invoker = createInvoker(
+    AtividadeController_2.save(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.AtividadeController",
+      "save",
+      Nil,
+      "POST",
+      this.prefix + """atividades""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:18
+  private[this] lazy val controllers_AtividadeController_saveEdit6_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("atividades/edit")))
+  )
+  private[this] lazy val controllers_AtividadeController_saveEdit6_invoker = createInvoker(
+    AtividadeController_2.saveEdit(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.AtividadeController",
+      "saveEdit",
+      Nil,
+      "POST",
+      this.prefix + """atividades/edit""",
+      """""",
+      Seq()
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -98,6 +197,36 @@ class Routes(
     case controllers_Assets_versioned1_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
         controllers_Assets_versioned1_invoker.call(Assets_1.versioned(path, file))
+      }
+  
+    // @LINE:14
+    case controllers_AtividadeController_list2_route(params) =>
+      call { 
+        controllers_AtividadeController_list2_invoker.call(AtividadeController_2.list)
+      }
+  
+    // @LINE:15
+    case controllers_AtividadeController_showBlank3_route(params) =>
+      call { 
+        controllers_AtividadeController_showBlank3_invoker.call(AtividadeController_2.showBlank())
+      }
+  
+    // @LINE:16
+    case controllers_AtividadeController_show4_route(params) =>
+      call(params.fromPath[String]("id", None)) { (id) =>
+        controllers_AtividadeController_show4_invoker.call(AtividadeController_2.show(id))
+      }
+  
+    // @LINE:17
+    case controllers_AtividadeController_save5_route(params) =>
+      call { 
+        controllers_AtividadeController_save5_invoker.call(AtividadeController_2.save())
+      }
+  
+    // @LINE:18
+    case controllers_AtividadeController_saveEdit6_route(params) =>
+      call { 
+        controllers_AtividadeController_saveEdit6_invoker.call(AtividadeController_2.saveEdit())
       }
   }
 }

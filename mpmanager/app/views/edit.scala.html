@@ -1,0 +1,17 @@
+@(atividadeForm: Form[Atividade])
+
+@import helper._
+
+@main("Edit Atividade Form") {
+	<h1>Edit Atividade Form</h1>
+	@helper.form(action = helper.CSRF(routes.AtividadeController.saveEdit())) {
+		<fieldset>
+		<legend>Atividade @atividadeForm("Id")</legend>
+		@helper.inputText(atividadeForm("Id"), 'readonly -> "readonly")
+		@helper.inputText(atividadeForm("Data"))
+		@helper.inputText(atividadeForm("Status"))
+		@helper.textarea(atividadeForm("Descricao"))
+		</fieldset>
+		<input type="Submit" class="btn primary">
+	}
+}
