@@ -36,7 +36,7 @@ Seq[Any](format.raw/*1.34*/("""
 """),format.raw/*4.1*/("""
 """),_display_(/*5.2*/main("Atividade Form")/*5.24*/ {_display_(Seq[Any](format.raw/*5.26*/("""
 	"""),format.raw/*6.2*/("""<h1>Atividade Form</h1>
-	"""),_display_(/*7.3*/helper/*7.9*/.form(action = helper.CSRF(routes.AtividadeController.save()))/*7.71*/ {_display_(Seq[Any](format.raw/*7.73*/("""
+	"""),_display_(/*7.3*/helper/*7.9*/.form(action = helper.CSRF(routes.CadastroAtividadeController.save()))/*7.79*/ {_display_(Seq[Any](format.raw/*7.81*/("""
 		"""),format.raw/*8.3*/("""<fieldset>
 		<legend>Atividade """),_display_(/*9.22*/atividadeForm("Id")/*9.41*/.valueOr("(New Atividade)")),format.raw/*9.68*/("""</legend>
 		"""),_display_(/*10.4*/helper/*10.10*/.inputText(atividadeForm("Id"))),format.raw/*10.41*/("""
@@ -63,10 +63,10 @@ Seq[Any](format.raw/*1.34*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Thu Sep 28 00:32:07 BRT 2017
+                  DATE: Thu Sep 28 23:42:32 BRT 2017
                   SOURCE: C:/Users/hosqu/Documents/Projetos Ativos/APS/aps-utility/mpmanager/app/views/show.scala.html
-                  HASH: 967e6c78f382b1836940a1bb56bd6eba2146d684
-                  MATRIX: 956->1|1061->36|1106->33|1134->52|1161->54|1191->76|1230->78|1258->80|1309->106|1322->112|1392->174|1431->176|1460->179|1518->211|1545->230|1592->257|1631->270|1646->276|1698->307|1728->311|1743->317|1797->350|1827->354|1842->360|1898->395|1928->399|1943->405|2001->442|2031->445|2119->503|2151->505
+                  HASH: 77910a6c17d02f185a34c0e1dab2ddbd5a96e325
+                  MATRIX: 956->1|1061->36|1106->33|1134->52|1161->54|1191->76|1230->78|1258->80|1309->106|1322->112|1400->182|1439->184|1468->187|1526->219|1553->238|1600->265|1639->278|1654->284|1706->315|1736->319|1751->325|1805->358|1835->362|1850->368|1906->403|1936->407|1951->413|2009->450|2039->453|2127->511|2159->513
                   LINES: 28->1|31->3|34->1|36->4|37->5|37->5|37->5|38->6|39->7|39->7|39->7|39->7|40->8|41->9|41->9|41->9|42->10|42->10|42->10|43->11|43->11|43->11|44->12|44->12|44->12|45->13|45->13|45->13|46->14|48->16|49->17
                   -- GENERATED --
               */

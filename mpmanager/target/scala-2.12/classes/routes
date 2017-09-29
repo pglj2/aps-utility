@@ -11,8 +11,15 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 # GET     /models                     controllers.HomeController.models
 
 # Atividade Routes
-GET       /atividades                 controllers.AtividadeController.list
-GET       /atividades/new             controllers.AtividadeController.showBlank()
+# GET       /atividades                 controllers.AtividadeController.list
+# GET       /atividades/new             controllers.AtividadeController.showBlank()
 GET       /atividades/:id             controllers.AtividadeController.show(id: String)
-POST      /atividades                 controllers.AtividadeController.save()
+# POST      /atividades                 controllers.AtividadeController.save()
 POST      /atividades/edit            controllers.AtividadeController.saveEdit()
+
+# CadastroAtividade Routes
+GET         /cadastro/atividades             controllers.CadastroAtividadeController.showBlank()
+POST        /cadastro/atividades             controllers.CadastroAtividadeController.save()
+
+# Calendario Routes
+GET         /calendario                      controllers.CalendarioController.list()

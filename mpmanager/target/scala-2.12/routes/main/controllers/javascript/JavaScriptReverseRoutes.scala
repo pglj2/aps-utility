@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/hosqu/Documents/Projetos Ativos/APS/aps-utility/mpmanager/conf/routes
-// @DATE:Thu Sep 28 00:42:58 BRT 2017
+// @DATE:Fri Sep 29 00:09:53 BRT 2017
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -11,6 +11,56 @@ import _root_.play.libs.F
 
 // @LINE:6
 package controllers.javascript {
+
+  // @LINE:9
+  class ReverseAssets(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:9
+    def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.Assets.versioned",
+      """
+        function(file1) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/" + (""" + implicitly[play.api.mvc.PathBindable[Asset]].javascriptUnbind + """)("file", file1)})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:21
+  class ReverseCadastroAtividadeController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:22
+    def save: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CadastroAtividadeController.save",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "cadastro/atividades"})
+        }
+      """
+    )
+  
+    // @LINE:21
+    def showBlank: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CadastroAtividadeController.showBlank",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "cadastro/atividades"})
+        }
+      """
+    )
+  
+  }
 
   // @LINE:6
   class ReverseHomeController(_prefix: => String) {
@@ -32,7 +82,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:14
+  // @LINE:16
   class ReverseAtividadeController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -50,36 +100,6 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:14
-    def list: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.AtividadeController.list",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "atividades"})
-        }
-      """
-    )
-  
-    // @LINE:17
-    def save: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.AtividadeController.save",
-      """
-        function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "atividades"})
-        }
-      """
-    )
-  
-    // @LINE:15
-    def showBlank: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.AtividadeController.showBlank",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "atividades/new"})
-        }
-      """
-    )
-  
     // @LINE:18
     def saveEdit: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.AtividadeController.saveEdit",
@@ -92,20 +112,20 @@ package controllers.javascript {
   
   }
 
-  // @LINE:9
-  class ReverseAssets(_prefix: => String) {
+  // @LINE:25
+  class ReverseCalendarioController(_prefix: => String) {
 
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:9
-    def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.Assets.versioned",
+    // @LINE:25
+    def list: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CalendarioController.list",
       """
-        function(file1) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/" + (""" + implicitly[play.api.mvc.PathBindable[Asset]].javascriptUnbind + """)("file", file1)})
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "calendario"})
         }
       """
     )

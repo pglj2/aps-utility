@@ -9,7 +9,7 @@
 		extra-sbtVersion="0.13"
 		conf="test"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20170927234413"/>
+		date="20170928220912"/>
 	<dependencies>
 		<module organisation="org.foundweekends.giter8" name="sbt-giter8-scaffold">
 			<revision name="0.8.0" status="release" pubdate="20170416215346" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.foundweekends.org/giter8/" extra-scalaVersion="2.10" extra-sbtVersion="0.13" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="62">
@@ -357,12 +357,12 @@
 			</revision>
 		</module>
 		<module organisation="com.typesafe.sbt" name="sbt-play-ebean">
-			<revision name="4.0.2" status="release" pubdate="20170623010455" resolver="sbt-plugin-releases" artresolver="sbt-plugin-releases" homepage="https://github.com/playframework/play-ebean" extra-scalaVersion="2.10" extra-sbtVersion="0.13" downloaded="true" searched="true" default="false" conf="compile, default(compile)" position="57">
+			<revision name="4.0.2" status="release" pubdate="20170623010455" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/playframework/play-ebean" extra-scalaVersion="2.10" extra-sbtVersion="0.13" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="57">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="2076" time="3365" location="C:\Users\hosqu\.ivy2\cache\scala_2.10\sbt_0.13\com.typesafe.sbt\sbt-play-ebean\ivy-4.0.2.xml" searched="true" original-local-location="C:\Users\hosqu\.ivy2\cache\scala_2.10\sbt_0.13\com.typesafe.sbt\sbt-play-ebean\ivy-4.0.2.xml.original" origin-is-local="false" origin-location="https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-play-ebean/scala_2.10/sbt_0.13/4.0.2/ivys/ivy.xml"/>
+				<metadata-artifact status="no" details="" size="2078" time="0" location="C:\Users\hosqu\.ivy2\cache\scala_2.10\sbt_0.13\com.typesafe.sbt\sbt-play-ebean\ivy-4.0.2.xml" searched="false" origin-is-local="false" origin-location="https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-play-ebean/scala_2.10/sbt_0.13/4.0.2/ivys/ivy.xml"/>
 				<caller organisation="default" name="mpmanager-build" conf="test, compile, runtime" rev="4.0.2" rev-constraint-default="4.0.2" rev-constraint-dynamic="4.0.2" callerrev="0.1-SNAPSHOT" extra-scalaVersion="2.10" extra-sbtVersion="0.13"/>
 				<artifacts>
-					<artifact name="sbt-play-ebean" type="jar" ext="jar" status="successful" details="" size="26934" time="4507" location="C:\Users\hosqu\.ivy2\cache\scala_2.10\sbt_0.13\com.typesafe.sbt\sbt-play-ebean\jars\sbt-play-ebean-4.0.2.jar">
+					<artifact name="sbt-play-ebean" type="jar" ext="jar" status="no" details="" size="26934" time="0" location="C:\Users\hosqu\.ivy2\cache\scala_2.10\sbt_0.13\com.typesafe.sbt\sbt-play-ebean\jars\sbt-play-ebean-4.0.2.jar">
 						<origin-location is-local="false" location="https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-play-ebean/scala_2.10/sbt_0.13/4.0.2/jars/sbt-play-ebean.jar"/>
 					</artifact>
 				</artifacts>
@@ -407,12 +407,12 @@
 			</revision>
 		</module>
 		<module organisation="io.ebean" name="ebean-agent">
-			<revision name="10.3.1" status="release" pubdate="20170618074511" resolver="public" artresolver="public" homepage="http://ebean-orm.github.io/" downloaded="true" searched="true" default="false" conf="default, compile, runtime, default(compile), master" position="58">
+			<revision name="10.3.1" status="release" pubdate="20170618074511" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://ebean-orm.github.io/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="58">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="2632" time="972" location="C:\Users\hosqu\.ivy2\cache\io.ebean\ebean-agent\ivy-10.3.1.xml" searched="true" original-local-location="C:\Users\hosqu\.ivy2\cache\io.ebean\ebean-agent\ivy-10.3.1.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/ebean/ebean-agent/10.3.1/ebean-agent-10.3.1.pom"/>
+				<metadata-artifact status="no" details="" size="4944" time="0" location="C:\Users\hosqu\.ivy2\cache\io.ebean\ebean-agent\ivy-10.3.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/ebean/ebean-agent/10.3.1/ebean-agent-10.3.1.pom"/>
 				<caller organisation="com.typesafe.sbt" name="sbt-play-ebean" conf="compile" rev="10.3.1" rev-constraint-default="10.3.1" rev-constraint-dynamic="10.3.1" callerrev="4.0.2"/>
 				<artifacts>
-					<artifact name="ebean-agent" type="jar" ext="jar" status="successful" details="" size="346474" time="2664" location="C:\Users\hosqu\.ivy2\cache\io.ebean\ebean-agent\jars\ebean-agent-10.3.1.jar">
+					<artifact name="ebean-agent" type="jar" ext="jar" status="no" details="" size="346474" time="0" location="C:\Users\hosqu\.ivy2\cache\io.ebean\ebean-agent\jars\ebean-agent-10.3.1.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/ebean/ebean-agent/10.3.1/ebean-agent-10.3.1.jar"/>
 					</artifact>
 				</artifacts>

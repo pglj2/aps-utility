@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/hosqu/Documents/Projetos Ativos/APS/aps-utility/mpmanager/conf/routes
-// @DATE:Thu Sep 28 00:42:58 BRT 2017
+// @DATE:Fri Sep 29 00:09:53 BRT 2017
 
 package router
 
@@ -18,9 +18,13 @@ class Routes(
   // @LINE:6
   HomeController_0: controllers.HomeController,
   // @LINE:9
-  Assets_1: controllers.Assets,
-  // @LINE:14
-  AtividadeController_2: controllers.AtividadeController,
+  Assets_4: controllers.Assets,
+  // @LINE:16
+  AtividadeController_3: controllers.AtividadeController,
+  // @LINE:21
+  CadastroAtividadeController_1: controllers.CadastroAtividadeController,
+  // @LINE:25
+  CalendarioController_2: controllers.CalendarioController,
   val prefix: String
 ) extends GeneratedRouter {
 
@@ -29,14 +33,18 @@ class Routes(
     // @LINE:6
     HomeController_0: controllers.HomeController,
     // @LINE:9
-    Assets_1: controllers.Assets,
-    // @LINE:14
-    AtividadeController_2: controllers.AtividadeController
-  ) = this(errorHandler, HomeController_0, Assets_1, AtividadeController_2, "/")
+    Assets_4: controllers.Assets,
+    // @LINE:16
+    AtividadeController_3: controllers.AtividadeController,
+    // @LINE:21
+    CadastroAtividadeController_1: controllers.CadastroAtividadeController,
+    // @LINE:25
+    CalendarioController_2: controllers.CalendarioController
+  ) = this(errorHandler, HomeController_0, Assets_4, AtividadeController_3, CadastroAtividadeController_1, CalendarioController_2, "/")
 
   def withPrefix(prefix: String): Routes = {
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, HomeController_0, Assets_1, AtividadeController_2, prefix)
+    new Routes(errorHandler, HomeController_0, Assets_4, AtividadeController_3, CadastroAtividadeController_1, CalendarioController_2, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -46,11 +54,11 @@ class Routes(
   def documentation = List(
     ("""GET""", this.prefix, """controllers.HomeController.index"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """atividades""", """controllers.AtividadeController.list"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """atividades/new""", """controllers.AtividadeController.showBlank()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """atividades/""" + "$" + """id<[^/]+>""", """controllers.AtividadeController.show(id:String)"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """atividades""", """controllers.AtividadeController.save()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """atividades/edit""", """controllers.AtividadeController.saveEdit()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """cadastro/atividades""", """controllers.CadastroAtividadeController.showBlank()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """cadastro/atividades""", """controllers.CadastroAtividadeController.save()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """calendario""", """controllers.CalendarioController.list()"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -81,7 +89,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
   private[this] lazy val controllers_Assets_versioned1_invoker = createInvoker(
-    Assets_1.versioned(fakeValue[String], fakeValue[Asset]),
+    Assets_4.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.Assets",
@@ -94,48 +102,12 @@ class Routes(
     )
   )
 
-  // @LINE:14
-  private[this] lazy val controllers_AtividadeController_list2_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("atividades")))
-  )
-  private[this] lazy val controllers_AtividadeController_list2_invoker = createInvoker(
-    AtividadeController_2.list,
-    play.api.routing.HandlerDef(this.getClass.getClassLoader,
-      "router",
-      "controllers.AtividadeController",
-      "list",
-      Nil,
-      "GET",
-      this.prefix + """atividades""",
-      """ Atividade Routes""",
-      Seq()
-    )
-  )
-
-  // @LINE:15
-  private[this] lazy val controllers_AtividadeController_showBlank3_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("atividades/new")))
-  )
-  private[this] lazy val controllers_AtividadeController_showBlank3_invoker = createInvoker(
-    AtividadeController_2.showBlank(),
-    play.api.routing.HandlerDef(this.getClass.getClassLoader,
-      "router",
-      "controllers.AtividadeController",
-      "showBlank",
-      Nil,
-      "GET",
-      this.prefix + """atividades/new""",
-      """""",
-      Seq()
-    )
-  )
-
   // @LINE:16
-  private[this] lazy val controllers_AtividadeController_show4_route = Route("GET",
+  private[this] lazy val controllers_AtividadeController_show2_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("atividades/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_AtividadeController_show4_invoker = createInvoker(
-    AtividadeController_2.show(fakeValue[String]),
+  private[this] lazy val controllers_AtividadeController_show2_invoker = createInvoker(
+    AtividadeController_3.show(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.AtividadeController",
@@ -143,35 +115,19 @@ class Routes(
       Seq(classOf[String]),
       "GET",
       this.prefix + """atividades/""" + "$" + """id<[^/]+>""",
-      """""",
-      Seq()
-    )
-  )
-
-  // @LINE:17
-  private[this] lazy val controllers_AtividadeController_save5_route = Route("POST",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("atividades")))
-  )
-  private[this] lazy val controllers_AtividadeController_save5_invoker = createInvoker(
-    AtividadeController_2.save(),
-    play.api.routing.HandlerDef(this.getClass.getClassLoader,
-      "router",
-      "controllers.AtividadeController",
-      "save",
-      Nil,
-      "POST",
-      this.prefix + """atividades""",
-      """""",
+      """ Atividade Routes
+ GET       /atividades                 controllers.AtividadeController.list
+ GET       /atividades/new             controllers.AtividadeController.showBlank()""",
       Seq()
     )
   )
 
   // @LINE:18
-  private[this] lazy val controllers_AtividadeController_saveEdit6_route = Route("POST",
+  private[this] lazy val controllers_AtividadeController_saveEdit3_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("atividades/edit")))
   )
-  private[this] lazy val controllers_AtividadeController_saveEdit6_invoker = createInvoker(
-    AtividadeController_2.saveEdit(),
+  private[this] lazy val controllers_AtividadeController_saveEdit3_invoker = createInvoker(
+    AtividadeController_3.saveEdit(),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.AtividadeController",
@@ -179,7 +135,61 @@ class Routes(
       Nil,
       "POST",
       this.prefix + """atividades/edit""",
+      """ POST      /atividades                 controllers.AtividadeController.save()""",
+      Seq()
+    )
+  )
+
+  // @LINE:21
+  private[this] lazy val controllers_CadastroAtividadeController_showBlank4_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("cadastro/atividades")))
+  )
+  private[this] lazy val controllers_CadastroAtividadeController_showBlank4_invoker = createInvoker(
+    CadastroAtividadeController_1.showBlank(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.CadastroAtividadeController",
+      "showBlank",
+      Nil,
+      "GET",
+      this.prefix + """cadastro/atividades""",
+      """ CadastroAtividade Routes""",
+      Seq()
+    )
+  )
+
+  // @LINE:22
+  private[this] lazy val controllers_CadastroAtividadeController_save5_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("cadastro/atividades")))
+  )
+  private[this] lazy val controllers_CadastroAtividadeController_save5_invoker = createInvoker(
+    CadastroAtividadeController_1.save(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.CadastroAtividadeController",
+      "save",
+      Nil,
+      "POST",
+      this.prefix + """cadastro/atividades""",
       """""",
+      Seq()
+    )
+  )
+
+  // @LINE:25
+  private[this] lazy val controllers_CalendarioController_list6_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("calendario")))
+  )
+  private[this] lazy val controllers_CalendarioController_list6_invoker = createInvoker(
+    CalendarioController_2.list(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.CalendarioController",
+      "list",
+      Nil,
+      "GET",
+      this.prefix + """calendario""",
+      """ Calendario Routes""",
       Seq()
     )
   )
@@ -196,37 +206,37 @@ class Routes(
     // @LINE:9
     case controllers_Assets_versioned1_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned1_invoker.call(Assets_1.versioned(path, file))
-      }
-  
-    // @LINE:14
-    case controllers_AtividadeController_list2_route(params) =>
-      call { 
-        controllers_AtividadeController_list2_invoker.call(AtividadeController_2.list)
-      }
-  
-    // @LINE:15
-    case controllers_AtividadeController_showBlank3_route(params) =>
-      call { 
-        controllers_AtividadeController_showBlank3_invoker.call(AtividadeController_2.showBlank())
+        controllers_Assets_versioned1_invoker.call(Assets_4.versioned(path, file))
       }
   
     // @LINE:16
-    case controllers_AtividadeController_show4_route(params) =>
+    case controllers_AtividadeController_show2_route(params) =>
       call(params.fromPath[String]("id", None)) { (id) =>
-        controllers_AtividadeController_show4_invoker.call(AtividadeController_2.show(id))
-      }
-  
-    // @LINE:17
-    case controllers_AtividadeController_save5_route(params) =>
-      call { 
-        controllers_AtividadeController_save5_invoker.call(AtividadeController_2.save())
+        controllers_AtividadeController_show2_invoker.call(AtividadeController_3.show(id))
       }
   
     // @LINE:18
-    case controllers_AtividadeController_saveEdit6_route(params) =>
+    case controllers_AtividadeController_saveEdit3_route(params) =>
       call { 
-        controllers_AtividadeController_saveEdit6_invoker.call(AtividadeController_2.saveEdit())
+        controllers_AtividadeController_saveEdit3_invoker.call(AtividadeController_3.saveEdit())
+      }
+  
+    // @LINE:21
+    case controllers_CadastroAtividadeController_showBlank4_route(params) =>
+      call { 
+        controllers_CadastroAtividadeController_showBlank4_invoker.call(CadastroAtividadeController_1.showBlank())
+      }
+  
+    // @LINE:22
+    case controllers_CadastroAtividadeController_save5_route(params) =>
+      call { 
+        controllers_CadastroAtividadeController_save5_invoker.call(CadastroAtividadeController_1.save())
+      }
+  
+    // @LINE:25
+    case controllers_CalendarioController_list6_route(params) =>
+      call { 
+        controllers_CalendarioController_list6_invoker.call(CalendarioController_2.list())
       }
   }
 }
