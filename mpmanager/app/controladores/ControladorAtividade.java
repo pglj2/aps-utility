@@ -1,7 +1,9 @@
 package controladores;
 
 import cadastros.CadastroAtividade;
+import factory.repositorio.IFactoryRepository;
 import models.Atividade;
+import repositorios.IRepositorioAtividade;
 
 import java.util.List;
 
@@ -20,5 +22,10 @@ public class ControladorAtividade {
     public List<Atividade> buscarTodasAtividades() {
         List<Atividade> retorno = this.cadastroAtividade.buscarTodasAtividades();
         return retorno;
+    }
+
+    public void initRep(IFactoryRepository fr) {
+        IRepositorioAtividade repositorio = fr.makeRepAtividade();
+        this.cadastroAtividade.initRep(repositorio);
     }
 }

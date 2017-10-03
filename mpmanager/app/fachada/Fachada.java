@@ -1,6 +1,8 @@
 package fachada;
 
 import controladores.ControladorAtividade;
+import factory.repositorio.IFactoryRepository;
+import factory.repositorio.impl.FactoryRepositoryList;
 import models.Atividade;
 
 import java.util.List;
@@ -11,7 +13,10 @@ public class Fachada {
     private ControladorAtividade controladorAtividade;
 
     private Fachada() {
+        IFactoryRepository fr = new FactoryRepositoryList();
+
         this.controladorAtividade = new ControladorAtividade();
+        this.controladorAtividade.initRep(fr);
     }
 
     public static Fachada getInstance() {

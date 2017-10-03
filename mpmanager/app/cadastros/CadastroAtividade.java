@@ -22,4 +22,8 @@ public class CadastroAtividade {
         List<Atividade> retorno = this.repositorioAtividade.buscarTodasAtividades();
         return retorno;
     }
+
+    public void initRep(IRepositorioAtividade repositorio) {
+        this.repositorioAtividade = repositorio;
+    }
 }
