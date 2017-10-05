@@ -24,6 +24,11 @@ public class ControladorAtividade {
         return retorno;
     }
 
+    public Atividade buscarAtividadePorId(String id) {
+        Atividade retorno = this.cadastroAtividade.buscarAtividadePorId(id);
+        return retorno;
+    }
+
     public void initRep(IFactoryRepository fr) {
         IRepositorioAtividade repositorio = fr.makeRepAtividade();
         this.cadastroAtividade.initRep(repositorio);

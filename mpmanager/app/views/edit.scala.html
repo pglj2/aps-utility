@@ -3,14 +3,14 @@
 @import helper._
 
 @main("Edit Atividade Form") {
-	<h1>Edit Atividade Form</h1>
+	<h1>Editar Atividade</h1>
 	@helper.form(action = helper.CSRF(routes.AtividadeController.saveEdit())) {
 		<fieldset>
-		<legend>Atividade @atividadeForm("Id")</legend>
+		<!-- <legend>Atividade @atividadeForm("Id")</legend> -->
 		@helper.inputText(atividadeForm("Id"), 'readonly -> "readonly")
-		@helper.inputText(atividadeForm("Data"))
-		@helper.inputText(atividadeForm("Status"))
-		@helper.textarea(atividadeForm("Descricao"))
+		@helper.inputText(atividadeForm("Data"), 'size -> 30)
+		@helper.inputText(atividadeForm("Status"), 'size -> 30)
+		@helper.textarea(atividadeForm("Descricao"), 'cols -> 60)
 		</fieldset>
 		<input type="Submit" class="btn primary">
 	}

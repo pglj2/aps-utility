@@ -1,5 +1,6 @@
 package controllers;
 
+import fachada.Fachada;
 import play.mvc.*;
 import java.util.*;
 import models.*;
@@ -13,11 +14,13 @@ import javax.inject.*;
 public class AtividadeController extends Controller {
     private FormFactory formFactory;
     private Atividade atividades;
+    private Fachada fachada;
 
     @Inject
     public AtividadeController(FormFactory formFactory) {
         this.formFactory = formFactory;
         atividades = new Atividade();
+        this.fachada = Fachada.getInstance();
     }
 
     /**
@@ -37,8 +40,9 @@ public class AtividadeController extends Controller {
    	}
 
     public Result show(String id) {
-  		  Atividade atividade = Atividade.findById(id);
-  		  if (atividade == null) {
+  		  //Atividade atividade = Atividade.findById(id);
+  		  Atividade atividade = this.fachada.buscarAtividadePorId(id);
+          if (atividade == null) {
   			   return notFound("Atividade "+id+" does not exist.");
   		  }
   		  Form<Atividade> atividadeForm = formFactory.form(Atividade.class);
@@ -55,10 +59,12 @@ public class AtividadeController extends Controller {
 
     public Result saveEdit() {
   		Atividade atividade = formFactory.form(Atividade.class).bindFromRequest().get();
-      Atividade findAtividade = Atividade.findById(atividade.id);
-      findAtividade.setData(atividade.data);
-      findAtividade.setStatus(atividade.status);
-      findAtividade.setDescricao(atividade.descricao);
-  		return ok("Saved atividade: "+findAtividade);
+        //Atividade findAtividade = Atividade.findById(atividade.id);
+        Atividade findAtividade = this.fachada.buscarAtividadePorId(atividade.id);
+        findAtividade.setData(atividade.data);
+        findAtividade.setStatus(atividade.status);
+        findAtividade.setDescricao(atividade.descricao);
+  		//return ok("Saved atividade: "+findAtividade);
+        return ok(answer.render());
   	}
 }

@@ -21,5 +21,6 @@ POST      /atividades/edit            controllers.AtividadeController.saveEdit()
 GET         /cadastro/atividades             controllers.CadastroAtividadeController.showBlank()
 POST        /cadastro/atividades             controllers.CadastroAtividadeController.save()
 
+
 # Calendario Routes
-GET         /calendario                      controllers.CalendarioController.list()
+GET         /listar                      controllers.CalendarioController.list()

@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/hosqu/Documents/Projetos Ativos/APS/aps-utility/mpmanager/conf/routes
-// @DATE:Fri Sep 29 00:09:53 BRT 2017
+// @DATE:Wed Oct 04 23:55:43 BRT 2017
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -112,7 +112,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:25
+  // @LINE:26
   class ReverseCalendarioController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -120,12 +120,12 @@ package controllers.javascript {
     }
 
   
-    // @LINE:25
+    // @LINE:26
     def list: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CalendarioController.list",
       """
         function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "calendario"})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "listar"})
         }
       """
     )
