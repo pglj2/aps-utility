@@ -23,6 +23,11 @@ public class CadastroAtividade {
         return retorno;
     }
 
+    public Atividade buscarAtividadePorId(String id) {
+        Atividade retorno = this.repositorioAtividade.buscarOndeUsuarioId(id);
+        return retorno;
+    }
+
     public void initRep(IRepositorioAtividade repositorio) {
         this.repositorioAtividade = repositorio;
     }

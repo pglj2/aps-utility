@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/hosqu/Documents/Projetos Ativos/APS/aps-utility/mpmanager/conf/routes
-// @DATE:Fri Sep 29 00:09:53 BRT 2017
+// @DATE:Wed Oct 04 23:55:43 BRT 2017
 
 import play.api.mvc.Call
 
@@ -84,17 +84,17 @@ package controllers {
   
   }
 
-  // @LINE:25
+  // @LINE:26
   class ReverseCalendarioController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:25
+    // @LINE:26
     def list(): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "calendario")
+      Call("GET", _prefix + { _defaultPrefix } + "listar")
     }
   
   }

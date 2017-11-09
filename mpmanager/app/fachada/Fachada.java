@@ -39,4 +39,9 @@ public class Fachada {
         List<Atividade> retorno = this.controladorAtividade.buscarTodasAtividades();
         return retorno;
     }
+
+    public Atividade buscarAtividadePorId(String id) {
+        Atividade retorno = this.controladorAtividade.buscarAtividadePorId(id);
+        return retorno;
+    }
 }

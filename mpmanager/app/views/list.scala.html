@@ -1,6 +1,6 @@
 @(atividades: Set[Atividade])
 @main("Atividades Catalogue") {
-	<h1>All Atividades</h1>
+	<h1>Lista de Atividades</h1>
 	<dl>
 	@for(atividade <- atividades) {
 		<dt>
@@ -12,6 +12,9 @@
 	}
 	</dl>
 
-	<a href="@routes.CadastroAtividadeController.showBlank()" class="btn">
-	<i class="icon-plus"></i> New atividade</a>
+    <!-- <button type="button" href="@routes.CadastroAtividadeController.showBlank()" class="btn btn-primary">Teste</button> -->
+    <a class="btn btn-primary" href="/cadastro/atividades" role="button">Cadastrar Atividade</a>
+
+	<!-- <a href="@routes.CadastroAtividadeController.showBlank()" class="btn">
+	<i class="icon-plus"></i> New atividade</a> -->
 }

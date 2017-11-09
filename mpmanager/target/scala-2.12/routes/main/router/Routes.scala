@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/hosqu/Documents/Projetos Ativos/APS/aps-utility/mpmanager/conf/routes
-// @DATE:Fri Sep 29 00:09:53 BRT 2017
+// @DATE:Wed Oct 04 23:55:43 BRT 2017
 
 package router
 
@@ -23,7 +23,7 @@ class Routes(
   AtividadeController_3: controllers.AtividadeController,
   // @LINE:21
   CadastroAtividadeController_1: controllers.CadastroAtividadeController,
-  // @LINE:25
+  // @LINE:26
   CalendarioController_2: controllers.CalendarioController,
   val prefix: String
 ) extends GeneratedRouter {
@@ -38,7 +38,7 @@ class Routes(
     AtividadeController_3: controllers.AtividadeController,
     // @LINE:21
     CadastroAtividadeController_1: controllers.CadastroAtividadeController,
-    // @LINE:25
+    // @LINE:26
     CalendarioController_2: controllers.CalendarioController
   ) = this(errorHandler, HomeController_0, Assets_4, AtividadeController_3, CadastroAtividadeController_1, CalendarioController_2, "/")
 
@@ -58,7 +58,7 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """atividades/edit""", """controllers.AtividadeController.saveEdit()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """cadastro/atividades""", """controllers.CadastroAtividadeController.showBlank()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """cadastro/atividades""", """controllers.CadastroAtividadeController.save()"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """calendario""", """controllers.CalendarioController.list()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """listar""", """controllers.CalendarioController.list()"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -176,9 +176,9 @@ class Routes(
     )
   )
 
-  // @LINE:25
+  // @LINE:26
   private[this] lazy val controllers_CalendarioController_list6_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("calendario")))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("listar")))
   )
   private[this] lazy val controllers_CalendarioController_list6_invoker = createInvoker(
     CalendarioController_2.list(),
@@ -188,7 +188,7 @@ class Routes(
       "list",
       Nil,
       "GET",
-      this.prefix + """calendario""",
+      this.prefix + """listar""",
       """ Calendario Routes""",
       Seq()
     )
@@ -233,7 +233,7 @@ class Routes(
         controllers_CadastroAtividadeController_save5_invoker.call(CadastroAtividadeController_1.save())
       }
   
-    // @LINE:25
+    // @LINE:26
     case controllers_CalendarioController_list6_route(params) =>
       call { 
         controllers_CalendarioController_list6_invoker.call(CalendarioController_2.list())

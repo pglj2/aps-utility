@@ -32,7 +32,7 @@ object list extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlF
 
 Seq[Any](format.raw/*1.30*/("""
 """),_display_(/*2.2*/main("Atividades Catalogue")/*2.30*/ {_display_(Seq[Any](format.raw/*2.32*/("""
-	"""),format.raw/*3.2*/("""<h1>All Atividades</h1>
+	"""),format.raw/*3.2*/("""<h1>Lista de Atividades</h1>
 	<dl>
 	"""),_display_(/*5.3*/for(atividade <- atividades) yield /*5.31*/ {_display_(Seq[Any](format.raw/*5.33*/("""
 		"""),format.raw/*6.3*/("""<dt>
@@ -44,9 +44,12 @@ Seq[Any](format.raw/*1.30*/("""
 	""")))}),format.raw/*12.3*/("""
 	"""),format.raw/*13.2*/("""</dl>
 
-	<a href=""""),_display_(/*15.12*/routes/*15.18*/.CadastroAtividadeController.showBlank()),format.raw/*15.58*/("""" class="btn">
-	<i class="icon-plus"></i> New atividade</a>
-""")))}),format.raw/*17.2*/("""
+    <!-- <button type="button" href=""""),_display_(/*15.39*/routes/*15.45*/.CadastroAtividadeController.showBlank()),format.raw/*15.85*/("""" class="btn btn-primary">Teste</button> -->
+    <a class="btn btn-primary" href="/cadastro/atividades" role="button">Cadastrar Atividade</a>
+
+	<!-- <a href=""""),_display_(/*18.17*/routes/*18.23*/.CadastroAtividadeController.showBlank()),format.raw/*18.63*/("""" class="btn">
+	<i class="icon-plus"></i> New atividade</a> -->
+""")))}),format.raw/*20.2*/("""
 """))
       }
     }
@@ -63,11 +66,11 @@ Seq[Any](format.raw/*1.30*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Thu Sep 28 23:45:28 BRT 2017
+                  DATE: Wed Oct 04 22:41:57 BRT 2017
                   SOURCE: C:/Users/hosqu/Documents/Projetos Ativos/APS/aps-utility/mpmanager/app/views/list.scala.html
-                  HASH: 5dc7b03c9bfc7f1958288019686cedefaa255ebc
-                  MATRIX: 955->1|1078->29|1105->31|1141->59|1180->61|1208->63|1265->95|1308->123|1347->125|1376->128|1420->146|1434->152|1493->191|1526->199|1543->208|1566->211|1594->212|1623->215|1640->224|1665->229|1693->230|1722->233|1739->242|1766->249|1796->253|1842->273|1860->282|1891->292|1929->300|1958->302|2003->320|2018->326|2079->366|2170->427
-                  LINES: 28->1|33->1|34->2|34->2|34->2|35->3|37->5|37->5|37->5|38->6|39->7|39->7|39->7|40->8|40->8|40->8|40->8|40->8|40->8|40->8|40->8|40->8|40->8|40->8|41->9|43->11|43->11|43->11|44->12|45->13|47->15|47->15|47->15|49->17
+                  HASH: 4fed7cb48bb1ca62e909a79494b131e6e81866bd
+                  MATRIX: 955->1|1078->29|1105->31|1141->59|1180->61|1208->63|1270->100|1313->128|1352->130|1381->133|1425->151|1439->157|1498->196|1531->204|1548->213|1571->216|1599->217|1628->220|1645->229|1670->234|1698->235|1727->238|1744->247|1771->254|1801->258|1847->278|1865->287|1896->297|1934->305|1963->307|2035->352|2050->358|2111->398|2297->557|2312->563|2373->603|2468->668
+                  LINES: 28->1|33->1|34->2|34->2|34->2|35->3|37->5|37->5|37->5|38->6|39->7|39->7|39->7|40->8|40->8|40->8|40->8|40->8|40->8|40->8|40->8|40->8|40->8|40->8|41->9|43->11|43->11|43->11|44->12|45->13|47->15|47->15|47->15|50->18|50->18|50->18|52->20
                   -- GENERATED --
               */
           

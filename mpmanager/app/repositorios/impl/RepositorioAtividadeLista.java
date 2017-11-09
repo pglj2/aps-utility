@@ -24,7 +24,12 @@ public class RepositorioAtividadeLista implements IRepositorioAtividade {
     }
 
     @Override
-    public List<Atividade> buscarOndeUsuarioId(int usuarioId) {
+    public Atividade buscarOndeUsuarioId(String usuarioId) {
+        for (Atividade atividade : this.lista) {
+            if (atividade.id.equals(usuarioId)) {
+                return atividade;
+            }
+        }
         return null;
     }
 

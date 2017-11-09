@@ -3,14 +3,12 @@
 @import helper._
 
 @main("Atividade Form") {
-	<h1>Atividade Form</h1>
+	<h1>Cadastrar Atividade</h1>
 	@helper.form(action = helper.CSRF(routes.CadastroAtividadeController.save())) {
 		<fieldset>
-		<legend>Atividade @atividadeForm("Id").valueOr("(New Atividade)")</legend>
-		@helper.inputText(atividadeForm("Id"))
-		@helper.inputText(atividadeForm("Data"))
-		@helper.inputText(atividadeForm("Status"))
-		@helper.textarea(atividadeForm("Descricao"))
+		<!-- <legend>Atividade @atividadeForm("Id").valueOr("(New Atividade)")</legend> -->
+		@helper.inputText(atividadeForm("Data"), 'size -> 30)
+		@helper.textarea(atividadeForm("Descricao"), 'cols -> 60)
 		</fieldset>
 		<input type="Submit" class="btn primary">
 	}
