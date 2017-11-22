@@ -1,8 +1,8 @@
 package br.ufpe.cin.models;
 
-        import com.fasterxml.jackson.annotation.JsonCreator;
-        import com.fasterxml.jackson.annotation.JsonProperty;
-        import org.hibernate.validator.constraints.NotEmpty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.hibernate.validator.constraints.NotEmpty;
 
 public class Usuario {
     @NotEmpty

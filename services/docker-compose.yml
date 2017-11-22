@@ -10,3 +10,13 @@ services:
     build: service-cadastro-usuario/
     ports:
       - "9000:8080"
+  servicecontroladoratividades:
+    build: service-controlador-atividades/
+    links:
+      - servicecadastroatividade
+    ports:
+      - "9020:8080"
+  servicecadastroatividade:
+    build: service-cadastro-atividade/
+    ports:
+      - "9010:8080"

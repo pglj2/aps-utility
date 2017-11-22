@@ -11,6 +11,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="service-controlador-atividades_main" />
     <orderEntry type="library" name="Gradle: io.dropwizard:dropwizard-core:1.2.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.jsoup:jsoup:1.11.2" level="project" />
     <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
     <orderEntry type="library" name="Gradle: io.dropwizard:dropwizard-util:1.2.0" level="project" />
     <orderEntry type="library" name="Gradle: io.dropwizard:dropwizard-jackson:1.2.0" level="project" />
