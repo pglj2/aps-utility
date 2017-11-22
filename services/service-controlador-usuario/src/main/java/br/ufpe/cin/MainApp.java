@@ -1,5 +1,6 @@
 package br.ufpe.cin;
 
+import br.ufpe.cin.resources.BuscarPorNomeResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Environment;
 
@@ -10,6 +11,6 @@ public class MainApp extends Application<ServiceControladorUsuarioConfiguration>
 
     @Override
     public void run(ServiceControladorUsuarioConfiguration configuration, Environment environment) throws Exception {
-        //environment.jersey().register(new BuscarPorNomeResource());
+        environment.jersey().register(new BuscarPorNomeResource());
     }
 }

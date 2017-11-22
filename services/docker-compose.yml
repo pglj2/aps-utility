@@ -1,10 +1,12 @@
 version: '3'
 services:
-  service-controlador-usuario:
+  servicecontroladorusuario:
     build: service-controlador-usuario/
     links:
-      - service-cadastro-usuario
+      - servicecadastrousuario
     ports:
       - "8080:8080"
-  service-cadastro-usuario:
+  servicecadastrousuario:
     build: service-cadastro-usuario/
+    ports:
+      - "9000:8080"
