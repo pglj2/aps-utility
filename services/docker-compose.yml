@@ -20,3 +20,10 @@ services:
     build: service-cadastro-atividade/
     ports:
       - "9010:8080"
+  servicefachada:
+    build: service-fachada/
+    links:
+      - servicecontroladorusuario
+      - servicecontroladoratividades
+    ports:
+      - "9030:8080"
