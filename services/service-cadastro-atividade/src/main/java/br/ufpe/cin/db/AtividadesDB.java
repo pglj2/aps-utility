@@ -18,4 +18,12 @@ public class AtividadesDB {
     public Atividade listarAtividade() {
         return atividades.get(0);
     }
+
+    public boolean isThereAtividade() {
+        if (atividades.size() == 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 }

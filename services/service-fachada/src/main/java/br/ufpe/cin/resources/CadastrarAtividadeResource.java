@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -33,5 +34,16 @@ public class CadastrarAtividadeResource {
         } else {
             return Response.serverError().build();
         }
+    }
+
+    @GET
+    public Response pageAtividades() throws IOException {
+        String url = "http://servicecadastroatividade:8080/cadastrar/atividade";
+        String json = Jsoup.connect(url)
+                .method(Connection.Method.GET)
+                .ignoreContentType(true)
+                .execute()
+                .body();
+        return Response.ok(json).build();
     }
 }

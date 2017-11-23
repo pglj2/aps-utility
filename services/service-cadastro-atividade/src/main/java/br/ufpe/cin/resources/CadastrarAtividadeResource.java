@@ -22,4 +22,10 @@ public class CadastrarAtividadeResource {
         atividadesDB.addAtividade(atividade);
         return Response.ok().status(201).build();
     }
+
+    @GET
+    public Response isThereAtividade() {
+        boolean retorno = atividadesDB.isThereAtividade();
+        return Response.ok(retorno).build();
+    }
 }

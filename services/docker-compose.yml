@@ -27,3 +27,9 @@ services:
       - servicecontroladoratividades
     ports:
       - "9030:8080"
+  servicefrontend:
+    build: service-frontend/
+    links:
+      - servicefachada
+    ports:
+      - "9090:8080"
